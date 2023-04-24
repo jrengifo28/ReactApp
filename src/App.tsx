@@ -1,13 +1,28 @@
-import ListGroup from "./components/ListGroup/ListGroup";
+//import ListGroup from "./components/ListGroup/ListGroup";
+import { useState } from "react";
 
 function App() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 
-  const handleSelectItem = (item: string) => {
+  const [isVisible, setVisibility] = useState(false);
+  const [isApproved, setApproved] = useState(true);
+
+  /*const handleSelectItem = (item: string) => {
     console.log(item);
   }
+  */
 
-  return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
+  const handleClick = () => {
+    setVisibility(true);
+    console.log(isVisible);
+  };
+
+  //return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
+  return (
+    <div>
+      <button onClick={handleClick}>Show</button>
+    </div>
+  );
 }
 
 export default App;
