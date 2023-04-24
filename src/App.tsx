@@ -1,6 +1,6 @@
 //import ListGroup from "./components/ListGroup/ListGroup";
-// import { useState } from "react";
-import Message from "./Message";
+import { useState } from "react";
+// import Message from "./Message";
 
 function App() {
   //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -28,10 +28,20 @@ function App() {
   //   console.log(isVisible);
   // };
 
+  const [drink, setDrink] = useState({
+    title: "Americano",
+    price: 5,
+  });
+
+  const handleClick = () => {
+    setDrink({ ...drink, price: 6 });
+  };
+
   //return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
   return (
     <div>
-      <Message />
+      {drink.price}
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 }
