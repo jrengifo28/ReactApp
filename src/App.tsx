@@ -1,8 +1,12 @@
 import { useState } from "react";
-import produce from "immer";
+
+// import produce from "immer";
 
 // import Message from "./Message";
 //import ListGroup from "./components/ListGroup/ListGroup";
+
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 function App() {
   //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -61,32 +65,38 @@ function App() {
   //   });
   // };
 
-  const [bugs, setBugs] = useState([
-    { id: 1, title: "Bug 1", fixed: false },
-    { id: 2, title: "Bug 2", fixed: false },
-  ]);
+  // const [bugs, setBugs] = useState([
+  //   { id: 1, title: "Bug 1", fixed: false },
+  //   { id: 2, title: "Bug 2", fixed: false },
+  // ]);
 
-  const handleClick = () => {
-    // setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+  // const handleClick = () => {
+  //   // setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
 
-    setBugs(
-      produce((draft) => {
-        const bug = draft.find((bug) => bug.id === 1);
-        if (bug) bug.fixed = true;
-      })
-    );
-  };
+  //   setBugs(
+  //     produce((draft) => {
+  //       const bug = draft.find((bug) => bug.id === 1);
+  //       if (bug) bug.fixed = true;
+  //     })
+  //   );
+  // };
+
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
 
   //return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
 
+  // {bugs.map((bug) => (
+  //   <p key={bug.id}>
+  //     {bug.title} {bug.fixed ? "Fixed" : "New"}
+  //   </p>
+  // ))}
+
+  // <button onClick={handleClick}>Click Me</button>
+
   return (
     <div>
-      {bugs.map((bug) => (
-        <p key={bug.id}>
-          {bug.title} {bug.fixed ? "Fixed" : "New"}
-        </p>
-      ))}
-      <button onClick={handleClick}>Click Me</button>
+      <NavBar carItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
     </div>
   );
 }
