@@ -93,17 +93,33 @@ function App() {
 
   // <button onClick={handleClick}>Click Me</button>
 
-  const [game, setGame] = useState({
-    id: 1,
-    player: {
-      name: "John",
-    },
+  //Exercise 1
+  // const [game, setGame] = useState({
+  //   id: 1,
+  //   player: {
+  //     name: "John",
+  //   },
+  // });
+
+  // const handleClick = () => {
+  //   setGame({ ...game, player: { ...game.player, name: "Bob" } });
+  // };
+
+  //Exercise 2
+  const [pizza, setPizza] = useState({
+    name: "Spicy Pepperoni",
+    toppings: ["Mushroom"],
   });
 
   const handleClick = () => {
-    setGame({ ...game, player: { ...game.player, name: "Bob" } });
+    setPizza({ ...pizza, toppings: [...pizza.toppings, "Cheese"] });
   };
 
+  return (
+    <div>
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
   // return (
   //   <div>
   //     <NavBar carItemsCount={cartItems.length} />
