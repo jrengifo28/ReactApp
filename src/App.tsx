@@ -41,18 +41,15 @@ function App() {
   //   },
   // });
 
-  const [tags, setTags] = useState(["happy", "cheerful"]);
-
-  const handleClick = () => {
-    //Add
-    setTags([...tags, "exciting"]);
-
-    //Remove
-    setTags(tags.filter((tag) => tag !== "happy"));
-
-    //Update
-    setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
-  };
+  // const [tags, setTags] = useState(["happy", "cheerful"]);
+  // const handleClick = () => {
+  //   //Add
+  //   setTags([...tags, "exciting"]);
+  //   //Remove
+  //   setTags(tags.filter((tag) => tag !== "happy"));
+  //   //Update
+  //   setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
+  // };
 
   // const handleClick = () => {
   //   // setDrink({ ...drink, price: 6 });
@@ -61,6 +58,15 @@ function App() {
   //     address: { ...customer.address, zipCode: 94112 },
   //   });
   // };
+
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+  ]);
+
+  const handleClick = () => {
+    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+  };
 
   //return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
 
