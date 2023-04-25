@@ -81,7 +81,7 @@ function App() {
   //   );
   // };
 
-  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+  // const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
 
   //return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
 
@@ -93,12 +93,23 @@ function App() {
 
   // <button onClick={handleClick}>Click Me</button>
 
-  return (
-    <div>
-      <NavBar carItemsCount={cartItems.length} />
-      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
-    </div>
-  );
+  const [game, setGame] = useState({
+    id: 1,
+    player: {
+      name: "John",
+    },
+  });
+
+  const handleClick = () => {
+    setGame({ ...game, player: { ...game.player, name: "Bob" } });
+  };
+
+  // return (
+  //   <div>
+  //     <NavBar carItemsCount={cartItems.length} />
+  //     <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+  //   </div>
+  // );
 }
 
 export default App;
