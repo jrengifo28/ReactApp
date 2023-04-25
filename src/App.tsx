@@ -33,26 +33,39 @@ function App() {
   //   price: 5,
   // });
 
-  const [customer, setCustomer] = useState({
-    name: "John",
-    address: {
-      city: "San Francisco",
-      zipCode: 94111,
-    },
-  });
+  // const [customer, setCustomer] = useState({
+  //   name: "John",
+  //   address: {
+  //     city: "San Francisco",
+  //     zipCode: 94111,
+  //   },
+  // });
+
+  const [tags, setTags] = useState(["happy", "cheerful"]);
 
   const handleClick = () => {
-    // setDrink({ ...drink, price: 6 });
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, zipCode: 94112 },
-    });
+    //Add
+    setTags([...tags, "exciting"]);
+
+    //Remove
+    setTags(tags.filter((tag) => tag !== "happy"));
+
+    //Update
+    setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
   };
 
+  // const handleClick = () => {
+  //   // setDrink({ ...drink, price: 6 });
+  //   setCustomer({
+  //     ...customer,
+  //     address: { ...customer.address, zipCode: 94112 },
+  //   });
+  // };
+
   //return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/></div>
+
   return (
     <div>
-      {drink.price}
       <button onClick={handleClick}>Click Me</button>
     </div>
   );
