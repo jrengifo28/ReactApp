@@ -1,13 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 
+import Form from "./components/Form";
 // import produce from "immer";
-
 // import Message from "./Message";
-//import ListGroup from "./components/ListGroup/ListGroup";
-
+// import ListGroup from "./components/ListGroup/ListGroup";
 // import NavBar from "./components/NavBar";
 // import Cart from "./components/Cart";
-import ExpandableText from "./components/ExpandableText";
+// import ExpandableText from "./components/ExpandableText";
 
 function App() {
   //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -134,29 +133,36 @@ function App() {
   //   });
   // };
 
-  return (
-    <div>
-      <ExpandableText>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        officiis quibusdam, iusto quos ut porro aliquam ex corrupti laboriosam
-        iure modi et voluptatem laborum natus ad provident ipsa soluta facilis
-        sequi recusandae magnam deleniti. Eos laborum harum iure assumenda,
-        blanditiis officia? Omnis, quia, placeat assumenda obcaecati porro
-        quisquam odio consequatur, inventore eveniet cupiditate suscipit
-        accusantium! Rem accusamus veritatis voluptatum non, expedita atque
-        quas, dolore, ducimus sit vero quae? Illum eos earum ducimus ipsa fuga
-        porro nostrum, fugiat molestiae nulla doloribus aspernatur id. Magni
-        vitae distinctio enim vel, doloribus dignissimos adipisci magnam
-        perspiciatis quasi similique quia quisquam? Ab debitis adipisci placeat.
-      </ExpandableText>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <ExpandableText>
+  //       Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+  //       officiis quibusdam, iusto quos ut porro aliquam ex corrupti laboriosam
+  //       iure modi et voluptatem laborum natus ad provident ipsa soluta facilis
+  //       sequi recusandae magnam deleniti. Eos laborum harum iure assumenda,
+  //       blanditiis officia? Omnis, quia, placeat assumenda obcaecati porro
+  //       quisquam odio consequatur, inventore eveniet cupiditate suscipit
+  //       accusantium! Rem accusamus veritatis voluptatum non, expedita atque
+  //       quas, dolore, ducimus sit vero quae? Illum eos earum ducimus ipsa fuga
+  //       porro nostrum, fugiat molestiae nulla doloribus aspernatur id. Magni
+  //       vitae distinctio enim vel, doloribus dignissimos adipisci magnam
+  //       perspiciatis quasi similique quia quisquam? Ab debitis adipisci placeat.
+  //     </ExpandableText>
+  //   </div>
+  // );
+
   // return (
   //   <div>
   //     <NavBar carItemsCount={cartItems.length} />
   //     <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
   //   </div>
   // );
+
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
 
 export default App;
