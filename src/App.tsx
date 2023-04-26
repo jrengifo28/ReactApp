@@ -5,8 +5,9 @@ import { useState } from "react";
 // import Message from "./Message";
 //import ListGroup from "./components/ListGroup/ListGroup";
 
-import NavBar from "./components/NavBar";
-import Cart from "./components/Cart";
+// import NavBar from "./components/NavBar";
+// import Cart from "./components/Cart";
+import ExpandableText from "./components/ExpandableText";
 
 function App() {
   //let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -116,26 +117,38 @@ function App() {
   // };
 
   //Exercise 3
-  const [cart, setCart] = useState({
-    discount: 0.1,
-    items: [
-      { id: 1, title: "Product 1", quantity: 1 },
-      { id: 2, title: "Product 2", quantity: 1 },
-    ],
-  });
+  // const [cart, setCart] = useState({
+  //   discount: 0.1,
+  //   items: [
+  //     { id: 1, title: "Product 1", quantity: 1 },
+  //     { id: 2, title: "Product 2", quantity: 1 },
+  //   ],
+  // });
 
-  const handleClick = () => {
-    setCart({
-      ...cart,
-      items: cart.items.map((item) =>
-        item.id === 1 ? { ...item, quantity: item.quantity + 1 } : item
-      ),
-    });
-  };
+  // const handleClick = () => {
+  //   setCart({
+  //     ...cart,
+  //     items: cart.items.map((item) =>
+  //       item.id === 1 ? { ...item, quantity: item.quantity + 1 } : item
+  //     ),
+  //   });
+  // };
 
   return (
     <div>
-      <button onClick={handleClick}>Click Me</button>
+      <ExpandableText>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+        officiis quibusdam, iusto quos ut porro aliquam ex corrupti laboriosam
+        iure modi et voluptatem laborum natus ad provident ipsa soluta facilis
+        sequi recusandae magnam deleniti. Eos laborum harum iure assumenda,
+        blanditiis officia? Omnis, quia, placeat assumenda obcaecati porro
+        quisquam odio consequatur, inventore eveniet cupiditate suscipit
+        accusantium! Rem accusamus veritatis voluptatum non, expedita atque
+        quas, dolore, ducimus sit vero quae? Illum eos earum ducimus ipsa fuga
+        porro nostrum, fugiat molestiae nulla doloribus aspernatur id. Magni
+        vitae distinctio enim vel, doloribus dignissimos adipisci magnam
+        perspiciatis quasi similique quia quisquam? Ab debitis adipisci placeat.
+      </ExpandableText>
     </div>
   );
   // return (
