@@ -11,10 +11,20 @@ function App() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios
-      .get<User[]>("https://jsonplaceholder.typicode.com/users")
-      .then((res) => setUsers(res.data))
-      .catch((err) => setError(err.message));
+    const fetchUsers = async () => {
+      try {
+        const res = await axios.get<User[]>(
+          "https://jsonplaceholder.typicode.com/xusers"
+        );
+        setUsers(res.data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchUsers();
+    // .then((res) => setUsers(res.data))
+    // .catch((err) => setError(err.message));
   }, []);
 
   return (
