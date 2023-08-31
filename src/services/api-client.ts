@@ -14,6 +14,18 @@ const axiosInstance = axios.create({
 });
 
 class APIClient<T> {
+    static get<T>(endpoint: string, arg1: { signal: AbortSignal; }) {
+        throw new Error("Method not implemented.");
+    }
+    static delete(arg0: string) {
+        throw new Error("Method not implemented.");
+    }
+    static post<T>(endpoint: string, entity: T) {
+        throw new Error("Method not implemented.");
+    }
+    static patch<T extends Entity>({ arg0, entity }: { arg0: string; entity: T; }) {
+        throw new Error("Method not implemented.");
+    }
     endpoint: string;
 
     constructor(endpoint: string) {
