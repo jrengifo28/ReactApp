@@ -6,19 +6,6 @@ import { Game } from "../entities/Game";
 
 const apiClient = new APIClient<Game>('/games');
 
-<<<<<<< HEAD
-=======
-export interface Game {
-    id: number;
-    name: string;
-    background_image: string;
-    parent_platforms: { platform: Platform }[];
-    metacritic: number;
-    rating_top: number;
-  }
-  
-  
->>>>>>> parent of bea8687 (Ex - Fetching a Game)
 const useGames = () => {
   const gameQuery = useGameQueryStore(s => s.gameQuery);
   
